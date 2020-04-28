@@ -7,8 +7,9 @@ tupleを使用するためc++11以降のコンパイラで
    
 laserScanDegree::laserScanDegree(){
     ros::NodeHandle nh_private("~");
-    scan_sub = nh.subscribe("/base_scan", 1, &laserScanDegree::msgsCallback, this);
+    // scan_sub = nh.subscribe("/base_scan", 1, &laserScanDegree::msgsCallback, this);
     // stageは/base_scanトピック
+    scan_sub = nh.subscribe("/scan", 1, &laserScanDegree::msgsCallback, this);
     timer = nh.createTimer(ros::Duration(0.05), &laserScanDegree::timerCallback, this);
 
     ROS_INFO("%f %f", latest_scan.angle_min, latest_scan.angle_max);
