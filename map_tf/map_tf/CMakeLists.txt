@@ -232,7 +232,7 @@ add_library(map_tf src/map_tf.cpp)
 target_link_libraries(map_tf ${catkin_LIBRARIES})
 ### ライブラリの作成
 
-add_executable(map_tf_test src/map_tf_test.cpp)
-add_dependencies(map_tf_test ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-target_link_libraries(map_tf_test map_tf ${catkin_LIBRARIES})
+add_executable(map_tf_node main/map_tf_node.cpp)
+add_dependencies(map_tf_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(map_tf_node map_tf ${catkin_LIBRARIES})
 ### map_tfを追加

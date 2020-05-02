@@ -4,7 +4,7 @@
 
 
 #include "ros/ros.h"
-#include "sensor_pkg/LaserScan_degree.h"
+#include "sensor_pkg/laserscan_degree.h"
 
 #include <tuple>
 

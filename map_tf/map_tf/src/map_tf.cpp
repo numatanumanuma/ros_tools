@@ -24,7 +24,7 @@ void mapTF::msgsCallback(const nav_msgs::OccupancyGrid::ConstPtr& msgs){
 }
 
 void mapTF::timerCallback(const ros::TimerEvent&){
-    
+    printNowpoint();
 }
 
 Point2D mapTF::getnowPoint(){

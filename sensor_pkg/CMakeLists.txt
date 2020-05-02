@@ -210,9 +210,9 @@ include_directories(
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
 
-add_library(LaserScan_degree src/LaserScan_degree.cpp)
-target_link_libraries(LaserScan_degree ${catkin_LIBRARIES})
+add_library(laserscan_degree src/laserscan_degree.cpp)
+target_link_libraries(laserscan_degree ${catkin_LIBRARIES})
 
-add_executable(sensor_test src/test.cpp)
-add_dependencies(sensor_test${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-target_link_libraries(sensor_test LaserScan_degree ${catkin_LIBRARIES})
+add_executable(laserscan_degree_node main/laserscan_degree_node.cpp)
+add_dependencies(laserscan_degree_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(laserscan_degree_node laserscan_degree ${catkin_LIBRARIES})
